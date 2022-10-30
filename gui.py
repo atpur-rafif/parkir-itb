@@ -117,5 +117,3 @@ def GUI():
     PalangMasuk(root, mobil)
 
     root.mainloop()
-
-GUI()
