@@ -31,9 +31,10 @@ class Data:
         if not kode in self.data:
             return
 
+        value = self.data[kode]
         del self.data[kode]
         self.write()
-        return
+        return value
     
     def count(self, tipe):
         c = 0
