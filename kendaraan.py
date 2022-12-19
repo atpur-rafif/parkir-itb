@@ -1,7 +1,7 @@
 from datetime import datetime
 import math
 import random
-from typing import TypedDict
+from typing import Any, TypedDict
 from data import data
 
 def generateTiket():
@@ -13,7 +13,8 @@ def getLocalTime():
 class Config(TypedDict):
     nama: str
     tipe: str
-    kapasitas: str
+    kapasitas: int
+    harga:Any
 
 
 class Kendaraan:
@@ -36,7 +37,7 @@ class Kendaraan:
     
     def info(self):
         self.jumlah = data.count(self.tipe)
-        return self.jumlah, self.pemasukan
+        return str(self.jumlah), str(self.pemasukan)
     
     def masuk(self):
         if self.jumlah >= self.kapasitas:
@@ -78,7 +79,7 @@ mobil = Kendaraan({
     'harga'     : hitungHargaMobil
 })
 
-def hitungHargaMotor(mulai, selesai):
+def hitungHargaMotor(*_):
     return 2000
 
 motor = Kendaraan({
